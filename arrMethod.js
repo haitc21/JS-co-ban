@@ -62,20 +62,27 @@ var arr = [
 //originArr cùng vùng nhớ với mảng đầu vào nên
 //  nếu originArr thay đổi thì arr cũng thay đổi
 
-function TinhGia(accumulator, currentValue, currentIndex, originArr) {
-    originArr[0].price = 2000;
+// function TinhGia(accumulator, currentValue, currentIndex, originArr) {
+//     originArr[0].price = 2000;
 
-    console.table({
-        'accumulator': accumulator,
-        'currentValue': currentValue.price,
-        'currentIndex': currentIndex
-    });
+//     console.table({
+//         'accumulator': accumulator,
+//         'currentValue': currentValue.price,
+//         'currentIndex': currentIndex
+//     });
 
-    return accumulator + currentValue.price
-}
+//     return accumulator + currentValue.price
+// }
 // reduce truyền vào 2 đối số
 // 1 hàm call back
 // giá trị khởi tạo của biến lưu trữ
-var reduceArr = arr.reduce(TinhGia, 0);
-console.log(reduceArr);
+// var reduceArr = arr.reduce(TinhGia, 0);
+// console.log(reduceArr);
 
+var newArr = arr.map(a => {
+    return {
+        Ten: a.name,
+        Gia: a.price
+    }
+});
+console.log(newArr);
