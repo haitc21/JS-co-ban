@@ -7,11 +7,63 @@
 // var headingNode = document.getElementById('heading1');
 // console.log(headingNode);
 
-// var headingNodes = document.getElementsByClassName('heading');
+// getElementsByTagName => HTMLCollection
+//  var headingNode = document.getElementsByTagName('h1');
+// console.log(headingNode);
+
+// getElementsByClassName => HTMLCollection
+// var headingNodes = document.getElementsByClassName('test');
 // console.log(headingNodes);
 
-var selector = document.querySelector('.test');
-console.log(selector);
+// var selector = document.querySelector('.test');
+// console.log(selector);
 
-var selectors = document.querySelectorAll('.test');
-console.log(selectors);
+// querySelectorAll => NodeList
+// var selectors = document.querySelectorAll('.test');
+// console.log(selectors[0]);
+
+// 4 Html Collection
+// các thẻ như form,  a thì tự thành Html Collection
+// var selectors = document.forms;
+// console.log(selectors);
+
+// Attr node
+// var headingNode = document.getElementById('heading1');
+// console.log(headingNode);
+// headingNode.title = 'test title';
+// console.log(headingNode);
+// console.log(headingNode.title);
+// headingNode.setAttribute('test-attr','123');
+// console.log(headingNode);
+// console.log(headingNode.getAttribute('test-attr'));
+
+// Text node
+var headingNode = document.getElementById('heading1');
+headingNode.innerText = 'thay doi text';
+console.log(headingNode.innerText);
+console.log(headingNode.textContent);
+// innerText lấy ra text bỏ hết thẻ và khoảng trắng
+// innerText trả ra nội dung như trên trang (css ẩn đi thì cũng k trả về
+
+// textContent lấy hết ội dung node kể cả khoảng tắng
+// textContent trả hết nội dung trong node về kể cả khi css ẩn đi
+
+// innerText thêm thẻ html thì vẫn ra text vì nó tự động ẩn
+// đổi thành mã chó dấu < >
+// dấu xuống dòng thì tự thành </br>
+headingNode.innerText = `
+
+<h1>abc</h1>
+
+
+`;
+
+// textContent thêm thẻ html thì vẫn ra text vì nó tự động ẩn
+// đổi textContent mã chó dấu < >
+// dấu xuống dòng thì tự thành khoảng trắng nên html k có tác động gì
+headingNode.textContent = `
+
+<h1>abc</h1>
+
+
+`;
